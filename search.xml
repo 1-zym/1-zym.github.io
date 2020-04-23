@@ -10,27 +10,6 @@
       </categories>
   </entry>
   <entry>
-    <title>对数据库触发器的认识</title>
-    <url>/2020/04/23/%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E8%AE%A4%E8%AF%86/</url>
-    <content><![CDATA[<h1 id="什么是触发器"><a href="#什么是触发器" class="headerlink" title="什么是触发器"></a>什么是触发器</h1><a id="more"></a>
-<p>1、mysql触发器是在当前的数据库表中设置一个对每行数据的一个监听器，监听相关事件，每当事件发生时。会执行一段由sql完成的一段功能代码。<br>2、触发器元素：<br>事件，执行代码</p>
-<h1 id="创建触发器"><a href="#创建触发器" class="headerlink" title="创建触发器"></a>创建触发器</h1><blockquote>
-<p>create trigger 触发器名字 事件 执行代码;</p>
-</blockquote>
-<h2 id="1、事件内容"><a href="#1、事件内容" class="headerlink" title="1、事件内容"></a>1、事件内容</h2><p>插入：insert删除：delete更新：update<br>事件的时机：before、after<br>内容和时机组合起来总共有六种<br>before insert ,before delete ,before update ,after insert ,after delete ,after update.<br>注意：时机是相对与要改变的表而言的</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
-<li>触发器不能同名</li>
-<li>目前mysql只支持一类事件设置一个触发器  </li>
-</ol>
-<h1 id="old和new"><a href="#old和new" class="headerlink" title="old和new"></a>old和new</h1><p><img src="https://img-blog.csdnimg.cn/201902011257143.jpg" alt=""><br><img src="" alt=""></p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>insert不能用old，因为在insert之前旧表中找不到insert操作的数据(你插入的一行或多行)<br>delete不能用new，因为delete之后新表中找不到delete操作的数据(你删除的一行或多行)<br>update old和new都可以使用，操作之前和之后的数据集都可以找到</p>
-<h1 id="after和before"><a href="#after和before" class="headerlink" title="after和before"></a>after和before</h1><p>同一张表使用before<br>不同的表使用after<br>after和befoe都不能修改old的值<br>但before可以修改new的值</p>
-]]></content>
-      <categories>
-        <category>数据库</category>
-      </categories>
-  </entry>
-  <entry>
     <title>我的第一篇博客文章</title>
     <url>/2020/04/22/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0/</url>
     <content><![CDATA[<h1 id="我的博客文章编写"><a href="#我的博客文章编写" class="headerlink" title="我的博客文章编写"></a>我的博客文章编写</h1><a id="more"></a>
@@ -109,5 +88,26 @@
       <tags>
         <tag>随笔</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>对数据库触发器的认识</title>
+    <url>/2020/04/23/%E5%AF%B9%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E8%AE%A4%E8%AF%86/</url>
+    <content><![CDATA[<h1 id="什么是触发器"><a href="#什么是触发器" class="headerlink" title="什么是触发器"></a>什么是触发器</h1><a id="more"></a>
+<p>1、mysql触发器是在当前的数据库表中设置一个对每行数据的一个监听器，监听相关事件，每当事件发生时。会执行一段由sql完成的一段功能代码。<br>2、触发器元素：<br>事件，执行代码</p>
+<h1 id="创建触发器"><a href="#创建触发器" class="headerlink" title="创建触发器"></a>创建触发器</h1><blockquote>
+<p>create trigger 触发器名字 事件 执行代码;</p>
+</blockquote>
+<h2 id="1、事件内容"><a href="#1、事件内容" class="headerlink" title="1、事件内容"></a>1、事件内容</h2><p>插入：insert删除：delete更新：update<br>事件的时机：before、after<br>内容和时机组合起来总共有六种<br>before insert ,before delete ,before update ,after insert ,after delete ,after update.<br>注意：时机是相对与要改变的表而言的</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
+<li>触发器不能同名</li>
+<li>目前mysql只支持一类事件设置一个触发器  </li>
+</ol>
+<h1 id="old和new"><a href="#old和new" class="headerlink" title="old和new"></a>old和new</h1><p><img src="https://img-blog.csdnimg.cn/201902011257143.jpg" alt=""><br><img src="" alt=""></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>insert不能用old，因为在insert之前旧表中找不到insert操作的数据(你插入的一行或多行)<br>delete不能用new，因为delete之后新表中找不到delete操作的数据(你删除的一行或多行)<br>update old和new都可以使用，操作之前和之后的数据集都可以找到</p>
+<h1 id="after和before"><a href="#after和before" class="headerlink" title="after和before"></a>after和before</h1><p>同一张表使用before<br>不同的表使用after<br>after和befoe都不能修改old的值<br>但before可以修改new的值</p>
+]]></content>
+      <categories>
+        <category>数据库</category>
+      </categories>
   </entry>
 </search>
